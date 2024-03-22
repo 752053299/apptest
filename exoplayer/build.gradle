@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.library'
+}
+
+apply from: 'constants.gradle'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.checkerframework:checker-compat-qual:' + checkerframeworkCompatVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    testImplementation 'androidx.test:core:' + androidxTestCoreVersion
+    testImplementation 'androidx.test.ext:junit:' + androidxTestJUnitVersion
+    testImplementation 'com.google.truth:truth:' + truthVersion
+    testImplementation 'org.robolectric:robolectric:' + robolectricVersion
+
+    api ('com.google.guava:guava:' + guavaVersion) {
+        // Exclude dependencies that are only used by Guava at compile time
+        // (but declared as runtime deps) [internal b/168188131].
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+        exclude group: 'org.checkerframework', module: 'checker-compat-qual'
+        exclude group: 'org.checkerframework', module: 'checker-qual'
+        exclude group: 'com.google.errorprone', module: 'error_prone_annotations'
+        exclude group: 'com.google.j2objc', module: 'j2objc-annotations'
+        exclude group: 'org.codehaus.mojo', module: 'animal-sniffer-annotations'
+    }
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'com.google.code.findbugs:jsr305:' + jsr305Version
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+    compileOnly 'org.checkerframework:checker-compat-qual:' + checkerframeworkCompatVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.checkerframework:checker-compat-qual:' + checkerframeworkCompatVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+    api 'androidx.media:media:' + androidxMediaVersion
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    implementation 'androidx.recyclerview:recyclerview:' + androidxRecyclerViewVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.checkerframework:checker-compat-qual:' + checkerframeworkCompatVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.checkerframework:checker-compat-qual:' + checkerframeworkCompatVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+
+
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'com.google.code.findbugs:jsr305:' + jsr305Version
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+    compileOnly 'org.checkerframework:checker-compat-qual:' + checkerframeworkCompatVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+
+
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.checkerframework:checker-compat-qual:' + checkerframeworkCompatVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    implementation 'androidx.core:core:' + androidxCoreVersion
+    compileOnly 'com.google.code.findbugs:jsr305:' + jsr305Version
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.checkerframework:checker-compat-qual:' + checkerframeworkCompatVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+    compileOnly 'com.google.errorprone:error_prone_annotations:' + errorProneVersion
+}
